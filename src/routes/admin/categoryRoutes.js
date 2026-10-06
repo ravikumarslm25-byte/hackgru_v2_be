@@ -1,0 +1,11 @@
+import { Router } from 'express';
+import * as c from '../../controllers/admin/categoryController.js';
+const router = Router();
+router.get('/', c.list);
+router.post('/', c.createCategory);
+router.patch('/:id', c.updateCategory);
+router.delete('/:id', c.deleteCategory);
+router.post('/sub', c.createSubcategory);
+router.patch('/sub/:id', c.updateSubcategory);
+router.delete('/sub/:id', c.deleteSubcategory);
+export default router;

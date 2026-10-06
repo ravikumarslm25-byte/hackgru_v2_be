@@ -1,0 +1,12 @@
+import { Router } from 'express';
+import { languages, list, getOne, create, update, setPublished, remove, runCode } from '../../controllers/admin/problemController.js';
+const router = Router();
+router.get('/languages', languages);
+router.post('/run', runCode);
+router.get('/', list);
+router.post('/', create);
+router.get('/:id', getOne);
+router.put('/:id', update);
+router.patch('/:id/publish', setPublished);
+router.delete('/:id', remove);
+export default router;

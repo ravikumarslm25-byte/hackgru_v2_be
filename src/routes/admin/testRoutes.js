@@ -1,0 +1,13 @@
+import { Router } from 'express';
+import { list, getOne, create, update, setPublished, remove, listAttempts, getAttemptReport, gradeAttempt } from '../../controllers/admin/testController.js';
+const router = Router();
+router.get('/', list);
+router.post('/', create);
+router.get('/attempt/:attemptId', getAttemptReport);
+router.patch('/attempt/:attemptId/grade', gradeAttempt);
+router.get('/:id/attempts', listAttempts);
+router.get('/:id', getOne);
+router.put('/:id', update);
+router.patch('/:id/publish', setPublished);
+router.delete('/:id', remove);
+export default router;

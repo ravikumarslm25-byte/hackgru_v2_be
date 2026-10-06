@@ -1,0 +1,38 @@
+{
+  "name": "hackgru-server",
+  "version": "1.0.0",
+  "description": "HackGRU API \u2014 Express + MongoDB (MVC)",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "seed": "node src/seed/seed.js",
+    "seed:ssat": "node src/seed/ssat/seedSsat.js",
+    "test": "node --experimental-test-module-mocks --test \"src/tests/**/*.test.mjs\"",
+    "generate:secret": "node scripts/generate-secret.js",
+    "migrate:001": "node src/migrations/001-college-affiliation.js",
+    "create:admin": "node scripts/create-admin.js",
+    "check:login": "node scripts/check-login.js",
+    "migrate:002": "node src/migrations/002-enrolment-paid.js",
+    "migrate:v2": "node scripts/migrate-v2-phase0.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1090.0",
+    "@aws-sdk/s3-request-presigner": "^3.1090.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.1",
+    "morgan": "^1.10.0",
+    "nodemailer": "^9.0.3",
+    "razorpay": "^2.9.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

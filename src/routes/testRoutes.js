@@ -1,0 +1,12 @@
+import { Router } from 'express';
+import { protect } from '../middleware/auth.js';
+import { listForCourse, getForTaking, submit, getAttempt, startAttempt, logEvent, submitAttempt } from '../controllers/testController.js';
+const router = Router();
+router.get('/course/:courseId', protect, listForCourse);
+router.get('/attempt/:attemptId', protect, getAttempt);
+router.get('/:id/take', protect, getForTaking);
+router.post('/:id/submit', protect, submit);
+router.post('/:id/start', protect, startAttempt);
+router.post('/attempt/:attemptId/event', protect, logEvent);
+router.post('/attempt/:attemptId/submit', protect, submitAttempt);
+export default router;
