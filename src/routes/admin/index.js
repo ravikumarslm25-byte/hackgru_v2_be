@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { protect, authorize, requirePermission as rp } from '../../middleware/auth.js';
 import registrationLinkRoutes from './registrationLinkRoutes.js';
+import liveClassRoutes from './liveClassRoutes.js';
 import dataRoutes from './dataRoutes.js';
 import spocRoutes from './spocRoutes.js';
 import materialRoutes from './materialRoutes.js';
@@ -21,6 +22,7 @@ const router = Router();
 router.use(protect, authorize('admin', 'staff'));
 
 router.use('/registration-links', rp('batches.manage'), registrationLinkRoutes);
+router.use('/live-classes', rp('batches.manage'), liveClassRoutes);
 router.use('/spocs', rp('colleges.manage'), spocRoutes);
 router.use('/materials', rp('courses.manage'), materialRoutes);
 router.use('/projects', rp('students.manage'), projectRoutes);

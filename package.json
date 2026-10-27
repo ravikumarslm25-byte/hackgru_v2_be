@@ -1,7 +1,7 @@
 {
   "name": "hackgru-server",
   "version": "1.0.0",
-  "description": "HackGRU API \u2014 Express + MongoDB (MVC)",
+  "description": "HackGRU API — Express + MongoDB (MVC)",
   "type": "module",
   "main": "server.js",
   "scripts": {
